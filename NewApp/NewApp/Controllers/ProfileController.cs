@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,32 +9,35 @@ namespace NewApp.Controllers
 {
     public class ProfileController : Controller
     {
+        [HttpGet]
         // GET: Profile
-        public ActionResult Profile()
+        public ActionResult ProfileOverview()
         {
-            return View();
+            Profile model = new Profile()
+            {
+                Id = 1,
+                Comment = "Some_text",
+                MobilePhone = "123456789"
+            };
+            return View(model);
         }
 
         // GET: Profile/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        
 
         // POST: Profile/Edit/5
+        
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Upload(HttpPostedFileBase upload)
         {
-            try
+            if (upload != null)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(upload.FileName);
+                // сохраняем файл в папку в проекте
+                upload.SaveAs(Server.MapPath("~/App_Data/" + fileName));
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("ProfileOverview");
         }
     }
 }
