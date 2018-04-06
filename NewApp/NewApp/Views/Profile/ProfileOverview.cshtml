@@ -1,0 +1,14 @@
+﻿@model NewApp.Models.Profile
+
+<div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Comment)
+    @Html.TextBoxFor(m => m.MobilePhone)
+    <h3>Выберите файл для загрузки</h3>
+    @using (Html.BeginForm("Upload", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="upload" /><br>
+        <input type="submit" value="Загрузить" />
+    }
+    <button type="submit">OK</button>
+</div>
