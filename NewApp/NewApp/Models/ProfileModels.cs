@@ -1,6 +1,6 @@
 ﻿namespace NewApp.Models
 {
-    public class Profile
+    public class ProfileModels
     {
         public int Id { get; set; }
         public string Comment { get; set; }

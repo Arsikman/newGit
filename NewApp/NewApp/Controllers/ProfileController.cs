@@ -1,4 +1,4 @@
-﻿using NewApp.Models;
+﻿using NewApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +13,9 @@ namespace NewApp.Controllers
         // GET: Profile
         public ActionResult ProfileOverview()
         {
-            Profile model = new Profile()
+            ProfileViewModels model = new ProfileViewModels()
             {
-                Id = 1,
-                Comment = "Some_text",
-                MobilePhone = "123456789"
+                
             };
             return View(model);
         }

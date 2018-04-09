@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/NewApp/NewApp/App_Data/^24AC75567768F20298F0AE57BFB6C692A5B372C93B8A528D04^pimgpsh_fullsize_distr.png
+/NewApp/NewApp/App_Data/67FD9347-9A56-423E-80ED-55351A8D1A62.jpg
+/NewApp/NewApp/App_Data/1518595168210.JPEG
+/NewApp/NewApp/App_Data/1518595167156.JPEG
+/NewApp/NewApp/App_Data/1518595057999.JPEG
